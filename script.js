@@ -22,10 +22,11 @@ function clearGrid(){
 
 function userInput(){
     let numberOfSquares = -1;
-    while(numberOfSquares < 0 || numberOfSquares > 100){
-        numberOfSquares = parseInt(prompt("What should the dimensions of the square grid be?"));
+    while(!Number.isInteger(numberOfSquares) || numberOfSquares < 0 || numberOfSquares > 100){
+        numberOfSquares = parseInt(prompt("What should the dimensions of the square grid be? Enter a number between 0 and 100."));
         console.log(numberOfSquares);
-        if(numberOfSquares < 0 || numberOfSquares > 100) console.log("Try again. The dimensions are too small or too big.");
+        if(!Number.isInteger(numberOfSquares) || numberOfSquares < 0 || numberOfSquares > 100) 
+            console.log("Try again. Please enter a valid integer between 0 and 100.");
     }
     createGrid(numberOfSquares);
 }
