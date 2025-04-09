@@ -2,7 +2,6 @@ const container = document.getElementById("container");
 
 const resetButton = document.querySelector("#reset");
 const displayGridButton = document.querySelector("#displayGrid");
-// const square = document.querySelector(".square");
 
 function createGrid(n){ // n is an integer that represents the dimensions of the grid
     document.documentElement.style.setProperty("--columns", n);
@@ -35,6 +34,7 @@ resetButton.addEventListener("click", ()=>{
     console.log("The reset button has been clicked");
     clearGrid();
     userInput();
+    colorSquares();
 })
 
 displayGridButton.addEventListener("click", ()=>{
@@ -46,6 +46,14 @@ displayGridButton.addEventListener("click", ()=>{
 
 })
 
-// square.addEventListener("mouseover",()=>{
-//     square.classList.add("active");
-// })
+function colorSquares(){
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square)=>{
+        square.addEventListener("mouseover",()=>{
+            square.classList.add("active");
+        })
+    })
+}
+createGrid(16);
+colorSquares();
+
