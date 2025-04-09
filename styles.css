@@ -18,12 +18,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     box-sizing: border-box;
+}
+
+.border-toggle{
+    border: 1px solid black;
+
 }
 
 .square:hover{
     background-color: black;
+}
+
+.square.active{
+    background-color: gray;
 }
   
  
